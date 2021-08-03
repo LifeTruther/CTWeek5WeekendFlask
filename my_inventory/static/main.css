@@ -1,0 +1,56 @@
+/* Nav styles */
+.hp-nav{
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    background-color: #e6e6ff;
+}
+
+/* Main Logo Image */
+.hp-nav img{
+    width:30%;
+    max-width: 150%;
+    margin-left: 2.5vw;
+    margin-top: 0.5vw;
+    margin-bottom: 00.5vw;
+}
+
+ul#nav-list{
+    min-width: 55 vw;
+    list-style: none;
+    padding-top: 1.3vw;
+}
+
+ul#nav-list li, ul#nav-list a{
+    display: inline;
+    text-decoration: none;
+    padding: 0.7vw;
+    font-size: 16px;
+    color: #881aff;
+}
+
+#nav-list a:nth-last-child(1){
+    border:1px solid #a64dff;
+    border-radius: 7px;
+    margin-right: 1vw;
+    margin-left: 1.2vw;
+}
+
+#header-text{
+    text-align: center;
+    color: #4c027e;
+    padding-bottom: 34vh;
+    padding-top: 41vh;
+    background-image: url("images/index-bg-top.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#middle-text{
+    text-align: center;
+    padding-top: 5vh;  
+}
+
+#quote1{
+    padding-top: 6vh;
+}
