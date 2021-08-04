@@ -54,3 +54,29 @@ ul#nav-list li, ul#nav-list a{
 #quote1{
     padding-top: 6vh;
 }
+
+/* Signup Page Stuff */
+{
+    
+}
+
+#signupf h3{
+    text-align: center;
+}
+
+#email-field, #password-field{
+    padding-right: 10vw;
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+}
+.butns{
+    background-color:#4c027e;
+    margin-left: 2vw;
+    margin-top: 1vh;
+    border-radius: 15px;
+}
+.butns:hover{
+    background-color: #e6e6ff;
+    border-color: #e6e6ff;
+    color: #4c027e;
+}

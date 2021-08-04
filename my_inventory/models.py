@@ -34,3 +34,4 @@ class User(db.Model):
 
     def set_token(self, length):
         return secrets.token_hex(length)
+
