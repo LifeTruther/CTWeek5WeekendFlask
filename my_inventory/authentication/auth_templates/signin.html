@@ -1,7 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content  %}
-    <h1>The Signin Page will fit in here</h1>
+
+<!-- Auth failed flash messages -->
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat, msg in messages %}
+                {% if cat == 'auth-failed' %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ msg }}
+                        <button type="button" class="close" data-bs-dismiss= "alert">&times;</button>
+                    </div>
+                {% endif %}
+                
+            {% endfor %}
+        {% endif %}    
+    {% endwith %}
+</div>
+
+
+<div class="containter">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3">
+            <h1><br>Sign In<br><br></h1>
+        </div>
+
+    </div>
+    <!--   include form.html in jinja -->
+    {% include 'form.html' %}
+</div>
 
 
 

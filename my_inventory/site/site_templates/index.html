@@ -2,6 +2,27 @@
 
 {% block content %}
 
+<!--Flask Flashed Messages to the User-->
+<div class="container">
+    {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for cat, msg in messages %}
+                {% if cat == 'user-created' %}
+                    <div class="alert alert-success" role="alert">
+                        {{ msg }}
+                        <button type="button" class="close" data-bs-dismiss= "alert">&times;</button>
+                    </div>
+                {% elif cat == 'auth-success' %}
+                    <div class="alert alert-success" role="alert">
+                        {{ msg }}
+                        <button type="button" class="close" data-bs-dismiss= "alert">&times;</button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}    
+    {% endwith %}
+</div>
+
 <div class="container">
 
     <header class="row">
@@ -21,9 +42,9 @@
         </div>
     </section>
 
-    <section class="row" id='quote1'>
+    <section class="row quote1">
         <blockquote class="blockquote">
-            <p>"I didn't realize the importance of putting all of my thoughts an worries into words, and the joy of sharing with others through my experiences."</p> 
+            <p>"I didn't realize the importance of putting all of my thoughts an worries into words, <br>and the joy of sharing with others through my experiences."</p> 
         </blockquote>     
         <figcaption class="blockquote-footer">  
             <p>-Sandra K, New Jersey</p>

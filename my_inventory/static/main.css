@@ -6,6 +6,11 @@
     background-color: #e6e6ff;
 }
 
+/* smaller container */
+.smallerone{
+    max-width: 950px;
+}
+
 /* Main Logo Image */
 .hp-nav img{
     width:30%;
@@ -18,6 +23,7 @@
 ul#nav-list{
     min-width: 55 vw;
     list-style: none;
+    margin-left: 5vw;
     padding-top: 1.3vw;
 }
 
@@ -46,19 +52,24 @@ ul#nav-list li, ul#nav-list a{
     background-repeat: no-repeat;
 }
 
+.header-text{
+    color: #4c027e;
+    padding-left: 15vw;
+    padding-top: 7vh;
+    padding-bottom: 5vh;
+}
+
 #middle-text{
     text-align: center;
     padding-top: 5vh;  
 }
 
-#quote1{
+.quote1{
     padding-top: 6vh;
+    padding-left: 8vw;
 }
 
 /* Signup Page Stuff */
-{
-    
-}
 
 #signupf h3{
     text-align: center;
