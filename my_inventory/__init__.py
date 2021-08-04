@@ -15,5 +15,3 @@ app.register_blueprint(auth)
 db.init_app(app)
 
 migrate = Migrate(app, db)
-
-from .models import User
