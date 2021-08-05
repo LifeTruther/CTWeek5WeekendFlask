@@ -25,12 +25,10 @@
                     <li>Our Support Network</li>
                 </a>
                 {% if current_user.is_authenticated %}
-                    <a href="{{ url_for('site.profile') }}">
+                    <a href="">
                         <li>Your History</li>
                     </a>
-                    
-                    
-                    <a href="">
+                    <a href="{{ url_for('site.profile') }}">
                         <li>Settings</li>
                     </a>
                     <a href="{{ url_for('auth.logout') }}">
