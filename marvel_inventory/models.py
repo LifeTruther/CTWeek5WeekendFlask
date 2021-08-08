@@ -26,13 +26,16 @@ def load_user(user_id):
 
 class User(db.Model, UserMixin):
     id = db.Column(db.String, primary_key = True)
+    name = db.Column(db.String(150), nullable = False)
     email = db.Column(db.String(150), nullable = False, unique = True)
-    password = db.Column(db.String, nullable = False)
+    password = db.Column(db.String, nullable = True)
     token = db.Column(db.String, unique = True)
     date_created = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
+    characters = db.relationship("Characters", backref = "creator", lazy = True)
 
-    def __init__(self, email, password, token = '', id = ''):
+    def __init__(self, name, email, password, token = '', id = ''):
         self.id = self.set_id()
+        self.name = name
         self.email = email
         self.password = self.set_password(password)
         self.token = self.set_token(24)
@@ -47,32 +50,33 @@ class User(db.Model, UserMixin):
     def set_token(self, length):
         return secrets.token_hex(length)
 
-class Stories(db.Model):
+class Characters(db.Model):
     id = db.Column(db.String, primary_key = True)
-    name = db.Column(db.String(150))
-    summary = db.Column(db.String(200), nullable = False)
-    category = db.Column(db.String(150), nullable = True)
-    relevantdx = db.Column(db.String(200), nullable = True)
-    user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
+    name = db.Column(db.String(150), nullable = False)
+    description = db.Column(db.String(400), nullable = False)
+    comics_appeared_in = db.Column(db.Integer, nullable = True) 
+    super_power = db.Column(db.String(150), nullable = True)
+    date_created = db.Column(db.DateTime, nullable = False, default = datetime.utcnow)
+    owner = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
 
-    def __init__(self, name, summary, category, relevantdx, user_token, id=''):
+    def __init__(self, name, description, comics_appeared_in, super_power, owner, id=''):
         self.id = self.set_id()
         self.name = name
-        self.summary = summary
-        self.category = category
-        self.relevantdx = relevantdx
-        self.user_token = user_token
+        self.description = description
+        self.comics_appeared_in = comics_appeared_in
+        self.super_power = super_power
+        self.owner = owner
     
     def set_id(self):
         return(secrets.token_urlsafe())
 
-# Creating our Marshaller to pull k,v pairs out of Story instance attributes
-class StorySchema(ma.Schema):
+# Creating our Marshaller to pull k,v pairs out ofcharacter instance attributes
+class CharacterSchema(ma.Schema):
     class Meta:
-        # detailing which fields to pull out of our story and send to API call & vice versa
-        fields = ['id', 'name', 'summary', 'category', 'relevantdx','user_token']
+        # detailing which fields to pull out of our character and send to API call & vice versa
+        fields = ['id', 'name', 'description', 'comics_appeared_in', 'super_power','owner']
 
 #take a python class object, iterate through our field, and add to dictionary
-story_schema = StorySchema()
-stories_schema = StorySchema(many = True)
+character_schema =CharacterSchema()
+characters_schema =CharacterSchema(many = True)

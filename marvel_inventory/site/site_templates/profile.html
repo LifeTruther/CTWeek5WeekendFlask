@@ -2,11 +2,10 @@
 
 {% block content %}
 
-    <header class="hero-section">
-        <h3 class="header-text">Welcome to Your History!</h3>
-    </header>
-    <div class="container smallerone">
-        <h3>Here are your Profile details:</h3>
+    <div class="container smallerone signupf">
+        <h2 class="header-text">Welcome to Your History!</h2>
+    
+        <h2><strong>Here are your Profile details:</strong></h2>
         <ul class="list-group">
             <li class="list-group-item">Email: {{ current_user.email }}</li>
             <li class="list-group-item">Token: {{ current_user.token }}</li>

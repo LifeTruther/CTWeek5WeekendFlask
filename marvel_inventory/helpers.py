@@ -3,7 +3,7 @@ import secrets
 
 from flask import request, jsonify
 
-from my_inventory.models import User, Stories
+from marvel_inventory.models import User, Characters
 
 def token_required(our_flask_function):
     @wraps(our_flask_function)

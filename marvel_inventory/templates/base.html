@@ -16,13 +16,16 @@
 
     <nav class="hp-nav">
         <div>
-            <a href="{{ url_for('site.home') }}"><img src="../../static/images/clipboardicon.png" alt="icon" id="toprightticon"></a>
+            <a href="{{ url_for('site.home') }}"><img src="../../static/images/ironmanicon.png" alt="icon" id="toprightticon"></a>
         </div>
 
         <div>
             <ul id="nav-list">
                 <a href="">
-                    <li>Our Support Network</li>
+                    <li>Wiki</li>
+                </a>
+                <a href="">
+                    <li>News</li>
                 </a>
                 {% if current_user.is_authenticated %}
                     <a href="">

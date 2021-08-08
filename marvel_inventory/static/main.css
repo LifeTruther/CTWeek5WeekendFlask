@@ -1,14 +1,22 @@
+
+body{
+    background-image: url(images/index-bg-top.jpg);
+}
+
 /* Nav styles */
 .hp-nav{
     display: flex;
     justify-content: center;
     vertical-align: middle;
-    background-color: #f5e6ff;
+    background-color: #C78F22;
 }
 
 /* smaller container */
 .smallerone{
     max-width: 950px;
+    background-color: #c1c6ca;
+    opacity: 0.95;
+    padding-bottom: 5vh;
 }
 
 /* Main Logo Image */
@@ -30,38 +38,40 @@ ul#nav-list{
 ul#nav-list li, ul#nav-list a{
     display: inline;
     text-decoration: none;
-    padding: 0.7vw;
-    font-size: 16px;
-    color: #881aff;
+    padding: 0.7vh;
+    margin: 1vh;
+    font-size: 18px;
+    color: #005333;
 }
 
 #nav-list a:nth-last-child(1){
-    border:1px solid #a64dff;
-    border-radius: 7px;
+    border:3px solid #005333;
+    border-radius: 5px;
     margin-right: 1vw;
     margin-left: 1.2vw;
 }
 
 #header-text{
     text-align: center;
-    color: #4c027e;
-    padding-bottom: 34vh;
-    padding-top: 41vh;
-    background-image: url("images/index-bg-top.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
+    color: #005333;
+    padding-bottom: 10vh;
+    font-weight: bold;
+    padding-top: 5vh;
 }
 
 .header-text{
-    color: #4c027e;
+    color: #005333;
     padding-left: 15vw;
-    padding-top: 7vh;
+    padding-top: 4vh;
+    font-weight: bold;
     padding-bottom: 5vh;
+    
 }
 
 #middle-text{
     text-align: center;
-    padding-top: 5vh;  
+    padding-top: 5vh;
+    color: #005333;  
 }
 
 .quote1{
@@ -71,8 +81,13 @@ ul#nav-list li, ul#nav-list a{
 
 /* Signup Page Stuff */
 
-#signupf h3{
-    text-align: center;
+.signupf{
+    color: #005333;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: #c1c6ca;
+    opacity: 0.91;
+    margin-top: 10vh;
 }
 
 #email-field, #password-field{
@@ -80,14 +95,27 @@ ul#nav-list li, ul#nav-list a{
     padding-top: 1vh;
     padding-bottom: 2vh;
 }
+
+.form-group{
+    padding-bottom: 5vh;
+}
+
+
 .butns{
-    background-color:#4c027e;
+    background-color:#005333;
     margin-left: 2vw;
     margin-top: 1vh;
     border-radius: 15px;
 }
 .butns:hover{
-    background-color: #e6e6ff;
-    border-color: #e6e6ff;
-    color: #4c027e;
+    background-color: #c1c6ca;
+    border-color: #c1c6ca;
+    color: #005333;
+}
+
+
+/* Profile list thing */
+
+.list-group{
+    padding: 2vw;
 }

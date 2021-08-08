@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    
+    <div class="containter signupf">
+        <div class="row">
+            <div class="col-12 col-md-6 offset-md-3 sign">
+                <h1><br>Build Your World!</h1>
+            </div>
+
+        </div>
+        <!--   include form.html in jinja -->
+        <div class="col-12 col-md-4 offset-md-4">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <fieldset id="email-field">
+                        {{ form.name.label }}
+                        {{ form.name(class = "form-control", placeholder = "Enter Your User Name") }}
+                    </fieldset>
+                    <fieldset id="email-field">
+                        {{ form.email.label }}
+                        {{ form.email(class = "form-control", placeholder = "Enter Email Address") }}
+                    </fieldset>
+                    <fieldset id="password-field">
+                        {{ form.password.label }}
+                        {{ form.password(class = "form-control", placehoder = "Enter Password") }}
+                    </fieldset>
+
+
+                    <!-- Submit Field Here -->
+
+                    {{ form.submit_button(class = "btn btn-primary btn-block butns") }}
+
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+
+
+{% endblock content %}
