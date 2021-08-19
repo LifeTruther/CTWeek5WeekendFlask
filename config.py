@@ -12,5 +12,5 @@ class Config:
         we'll leave them exposed in config
     """
     SECRET_KEY = "You might guess..."
-    SQLALCHEMY_DATABASE_URL = os.environ.get('DEPLOY_DATABASE_URL')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DEPLOY_DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
