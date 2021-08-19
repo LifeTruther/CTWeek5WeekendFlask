@@ -62,6 +62,7 @@ def update_character(current_user_token, id):
     character.owner = current_user_token.token
 
     response =character_schema.dump(character)
+    db.session.commit()
     return jsonify(response)
 
 #DELETEcharacter BY ID
